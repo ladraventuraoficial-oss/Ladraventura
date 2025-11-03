@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sistema de Bienestar Canino — LadraVentura</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="lv-header">
+    <div class="lv-brand">
+      <img src="https://i.ibb.co/X4k1qMG/ladraventura-logo.png" alt="LadraVentura" />
+      <div>
+        <h1>Sistema de Bienestar Canino</h1>
+        <p>Diagnóstico conductual y emocional — Operador</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- ====================== Datos iniciales ====================== -->
+    <section id="datos-iniciales" class="card">
+      <h2>🐾 Datos iniciales (portada del reporte)</h2>
+
+      <div class="grid-2">
+        <div class="field">
+          <label for="nombrePerro">Nombre del perro</label>
+          <input type="text" id="nombrePerro" name="nombrePerro" placeholder="Ej: Peluchito" required />
+        </div>
+        <div class="field">
+          <label for="nombreTutor">Nombre del tutor</label>
+          <input type="text" id="nombreTutor" name="nombreTutor" placeholder="Ej: Mariana López" required />
+        </div>
+        <div class="field">
+          <label for="nombreEvaluador">Nombre del evaluador</label>
+          <input type="text" id="nombreEvaluador" name="nombreEvaluador" placeholder="Ej: Santiago" required />
+        </div>
+        <div class="field">
+          <label for="fecha">Fecha</label>
+          <input type="date" id="fecha" name="fecha" />
+        </div>
+      </div>
+
+      <!-- 📧 Información de contacto -->
+      <div class="subcard">
+        <h3>📧 Información de contacto</h3>
+        <div class="grid-2">
+          <div class="field">
+            <label for="emailTutor">Correo del tutor</label>
+            <input type="email" id="emailTutor" name="emailTutor" placeholder="tutor@correo.com" required />
+          </div>
+          <div class="field">
+            <label for="emailCentro">Correo del centro (LadraVentura)</label>
+            <input type="email" id="emailCentro" name="emailCentro" value="ladraventuraoficial@gmail.com" required />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== Observación inicial ====================== -->
+    <section class="card">
+      <h2>✅ Observación inicial (5 minutos)</h2>
+      <p class="hint">Observa postura, cola, mirada, energía al verte, si acepta la correa.</p>
+      <div class="checks">
+        <label><input type="checkbox" name="observacion" value="Jadeo excesivo" /> Jadeo excesivo</label>
+        <label><input type="checkbox" name="observacion" value="Temblores" /> Temblores</label>
+        <label><input type="checkbox" name="observacion" value="Evita contacto" /> Evita contacto</label>
+        <label><input type="checkbox" name="observacion" value="Hiperactivo" /> Hiperactivo</label>
+        <label><input type="checkbox" name="observacion" value="Cojea o se queja" /> Cojea o se queja</label>
+        <label><input type="checkbox" name="observacion" value="Nada anormal" /> Nada anormal</label>
+      </div>
+      <div class="field">
+        <label for="notasRapidas">Notas rápidas</label>
+        <textarea id="notasRapidas" rows="3" placeholder="Anota aquí hallazgos clave de la observación previa..."></textarea>
+      </div>
+    </section>
+
+    <!-- ====================== Cuestionario P1–P20 ====================== -->
+    <form id="diagnosticoForm" class="card">
+      <h2>📝 Cuestionario (P1–P20)</h2>
+      <p class="hint">Responde cada ítem. Entre paréntesis verás una aclaración didáctica.</p>
+
+      <!-- Grupo: Físico / Emocional / Social se mezclan según P -->
+      <!-- P1 -->
+      <fieldset>
+        <legend>P1 — ¿Acepta fácil el arnés/collar? <span class="legend-hint">(colocación sin resistencia ni estrés)</span></legend>
+        <!-- 1–5 -->
+        <div class="options">
+          <label><input type="radio" name="P1" value="1" /> Nunca</label>
+          <label><input type="radio" name="P1" value="2" /> Casi nunca</label>
+          <label><input type="radio" name="P1" value="3" /> Regular</label>
+          <label><input type="radio" name="P1" value="4" /> Casi siempre</label>
+          <label><input type="radio" name="P1" value="5" /> Siempre</label>
+        </div>
+      </fieldset>
+
+      <!-- P2 -->
+      <fieldset>
+        <legend>P2 — ¿Se muestra con energía? <span class="legend-hint">(estado general activo, no apático)</span></legend>
+        <!-- 0/1 -->
+        <div class="options">
+          <label><input type="radio" name="P2" value="1" /> Sí</label>
+          <label><input type="radio" name="P2" value="0" /> No</label>
+        </div>
+      </fieldset>
+
+      <!-- P3 -->
+      <fieldset>
+        <legend>P3 — ¿Con qué frecuencia come su perro? <span class="legend-hint">(régimen alimenticio diario)</span></legend>
+        <!-- 1..3 -->
+        <div class="options">
+          <label><input type="radio" name="P3" value="1" /> 1 vez al día</label>
+          <label><input type="radio" name="P3" value="2" /> 1 o 2 veces al día</label>
+          <label><input type="radio" name="P3" value="3" /> 3 veces al día</label>
+        </div>
+      </fieldset>
+
+      <!-- P4 -->
+      <fieldset>
+        <legend>P4 — ¿Come con buen apetito? <span class="legend-hint">(ingesta sin rechazo ni selectividad excesiva)</span></legend>
+        <!-- 1–5 -->
+        <div class="options">
+          <label><input type="radio" name="P4" value="1" /> Nunca</label>
+          <label><input type="radio" name="P4" value="2" /> Casi nunca</label>
+          <label><input type="radio" name="P4" value="3" /> Regular</label>
+          <label><input type="radio" name="P4" value="4" /> Casi siempre</label>
+          <label><input type="radio" name="P4" value="5" /> Siempre</label>
+        </div>
+      </fieldset>
+
+      <!-- P5 -->
+      <fieldset>
+        <legend>P5 — ¿Pelaje/piel en buen estado? <span class="legend-hint">(sin lesiones, prurito o zonas sin pelo)</span></legend>
+        <!-- 0/1 -->
+        <div class="options">
+          <label><input type="radio" name="P5" value="1" /> Sí</label>
+          <label><input type="radio" name="P5" value="0" /> No</label>
+        </div>
+      </fieldset>
+
+      <!-- P6 -->
+      <fieldset>
+        <legend>P6 — ¿Cuántas horas duerme al día? <span class="legend-hint">(descanso adecuado por edad)</span></legend>
+        <!-- 3..0 -->
+        <div class="options">
+          <label><input type="radio" name="P6" value="3" /> 14 a 12 hrs</label>
+          <label><input type="radio" name="P6" value="2" /> 12 a 10 hrs</label>
+          <label><input type="radio" name="P6" value="1" /> 10 a 8 hrs</label>
+          <label><input type="radio" name="P6" value="0" /> Menos de 8 hrs</label>
+        </div>
+      </fieldset>
+
+      <!-- P7 -->
+      <fieldset>
+        <legend>P7 — ¿Se cansa rápido al jugar? <span class="legend-hint">(fatiga temprana, baja resistencia)</span></legend>
+        <!-- 0/3 -->
+        <div class="options">
+          <label><input type="radio" name="P7" value="0" /> No</label>
+          <label><input type="radio" name="P7" value="3" /> Sí</label>
+        </div>
+      </fieldset>
+
+      <!-- P8 -->
+      <fieldset>
+        <legend>P8 — ¿Tolera estar solo sin ansiedad? <span class="legend-hint">(ausencia de vocalización, destrucción o pánico)</span></legend>
+        <!-- 1–5 -->
+        <div class="options">
+          <label><input type="radio" name="P8" value="1" /> Nunca</label>
+          <label><input type="radio" name="P8" value="2" /> Casi nunca</label>
+          <label><input type="radio" name="P8" value="3" /> Regular</label>
+          <label><input type="radio" name="P8" value="4" /> Casi siempre</label>
+          <label><input type="radio" name="P8" value="5" /> Siempre</label>
+        </div>
+      </fieldset>
+
+      <!-- P9 -->
+      <fieldset>
+        <legend>P9 — ¿Reacciona con temblores o chillidos ante estímulos? <span class="legend-hint">(miedo/hipersensibilidad)</span></legend>
+        <!-- 0/3 -->
+        <div class="options">
+          <label><input type="radio" name="P9" value="3" /> Sí</label>
+          <label><input type="radio" name="P9" value="0" /> No</label>
+        </div>
+      </fieldset>
+
+      <!-- P10 -->
+      <fieldset>
+        <legend>P10 — ¿Cuántas veces al día busca afecto? <span class="legend-hint">(contacto social voluntario)</span></legend>
+        <!-- 0..3 -->
+        <div class="options">
+          <label><input type="radio" name="P10" value="0" /> 0 veces</label>
+          <label><input type="radio" name="P10" value="1" /> 1 a 3</label>
+          <label><input type="radio" name="P10" value="2" /> 3 a 6</label>
+          <label><input type="radio" name="P10" value="3" /> 6 o más</label>
+        </div>
+      </fieldset>
+
+      <!-- P11 -->
+      <fieldset>
+        <legend>P11 — ¿Maneja bien la emoción ante novedades? <span class="legend-hint">(recupera calma, no entra en pánico)</span></legend>
+        <!-- 1–5 -->
+        <div class="options">
+          <label><input type="radio" name="P11" value="1" /> Nunca</label>
+          <label><input type="radio" name="P11" value="2" /> Casi nunca</label>
+          <label><input type="radio" name="P11" value="3" /> Regular</label>
+          <label><input type="radio" name="P11" value="4" /> Casi siempre</label>
+          <label><input type="radio" name="P11" value="5" /> Siempre</label>
+        </div>
+      </fieldset>
+
+      <!-- P12 -->
+      <fieldset>
+        <legend>P12 — ¿Presenta ansiedad por separación? <span class="legend-hint">(vocaliza, destructivo o pánico al quedar solo)</span></legend>
+        <!-- 1–5 -->
+        <div class="options">
+          <label><input type="radio" name="P12" value="1" /> Nunca</label>
+          <label><input type="radio" name="P12" value="2" /> Casi nunca</label>
+          <label><input type="radio" name="P12" value="3" /> Regular</label>
+          <label><input type="radio" name="P12" value="4" /> Casi siempre</label>
+          <label><input type="radio" name="P12" value="5" /> Siempre</label>
+        </div>
+      </fieldset>
+
+      <!-- P13 -->
+      <fieldset>
+        <legend>P13 — ¿Ladridos excesivos? <span class="legend-hint">(persistentes sin razón aparente)</span></legend>
+        <!-- Sí=0, No=3 -->
+        <div class="options">
+          <label><input type="radio" name="P13" value="0" /> Sí</label>
+          <label><input type="radio" name="P13" value="3" /> No</label>
+        </div>
+      </fieldset>
+
+      <!-- P14 -->
+      <fieldset>
+        <legend>P14 — ¿Se aburre y destruye cosas? <span class="legend-hint">(masticar/romper por ansiedad o falta de estímulo)</span></legend>
+        <!-- Sí=0, No=3 -->
+        <div class="options">
+          <label><input type="radio" name="P14" value="0" /> Sí</label>
+          <label><input type="radio" name="P14" value="3" /> No</label>
+        </div>
+      </fieldset>
+
+      <!-- P15 -->
+      <fieldset>
+        <legend>P15 — ¿Se relaciona bien con otros perros? <span class="legend-hint">(tolerancia, juego adecuado)</span></legend>
+        <!-- 1–5 -->
+        <div class="options">
+          <label><input type="radio" name="P15" value="1" /> Nunca</label>
+          <label><input type="radio" name="P15" value="2" /> Casi nunca</label>
+          <label><input type="radio" name="P15" value="3" /> Regular</label>
+          <label><input type="radio" name="P15" value="4" /> Casi siempre</label>
+          <label><input type="radio" name="P15" value="5" /> Siempre</label>
+        </div>
+      </fieldset>
+
+      <!-- P16 -->
+      <fieldset>
+        <legend>P16 — ¿Se relaciona bien con personas? <span class="legend-hint">(contacto amable sin miedo)</span></legend>
+        <!-- 1–5 -->
+        <div class="options">
+          <label><input type="radio" name="P16" value="1" /> Nunca</label>
+          <label><input type="radio" name="P16" value="2" /> Casi nunca</label>
+          <label><input type="radio" name="P16" value="3" /> Regular</label>
+          <label><input type="radio" name="P16" value="4" /> Casi siempre</label>
+          <label><input type="radio" name="P16" value="5" /> Siempre</label>
+        </div>
+      </fieldset>
+
+      <!-- P17 -->
+      <fieldset>
+        <legend>P17 — ¿Respeta normas básicas en paseo? <span class="legend-hint">(no tirar, atender al tutor)</span></legend>
+        <!-- 0/3 -->
+        <div class="options">
+          <label><input type="radio" name="P17" value="3" /> Sí</label>
+          <label><input type="radio" name="P17" value="0" /> No</label>
+        </div>
+      </fieldset>
+
+      <!-- P18 -->
+      <fieldset>
+        <legend>P18 — ¿Evita el contacto social? <span class="legend-hint">(rehúye interacción con perros/personas)</span></legend>
+        <!-- 4..0 (invertida) -->
+        <div class="options">
+          <label><input type="radio" name="P18" value="4" /> Nunca</label>
+          <label><input type="radio" name="P18" value="3" /> Casi nunca</label>
+          <label><input type="radio" name="P18" value="2" /> Regular</label>
+          <label><input type="radio" name="P18" value="1" /> Casi siempre</label>
+          <label><input type="radio" name="P18" value="0" /> Siempre</label>
+        </div>
+      </fieldset>
+
+      <!-- P19 -->
+      <fieldset>
+        <legend>P19 — ¿Se muestra agresivo? <span class="legend-hint">(gruñidos, embestidas, mordidas)</span></legend>
+        <!-- 4..0 (invertida) -->
+        <div class="options">
+          <label><input type="radio" name="P19" value="4" /> Nunca</label>
+          <label><input type="radio" name="P19" value="3" /> Casi nunca</label>
+          <label><input type="radio" name="P19" value="2" /> Regular</label>
+          <label><input type="radio" name="P19" value="1" /> Casi siempre</label>
+          <label><input type="radio" name="P19" value="0" /> Siempre</label>
+        </div>
+      </fieldset>
+
+      <!-- P20 -->
+      <fieldset>
+        <legend>P20 — ¿Se adapta a lugares públicos? <span class="legend-hint">(entornos con ruido, gente, perros)</span></legend>
+        <!-- 0..4 -->
+        <div class="options">
+          <label><input type="radio" name="P20" value="0" /> Nunca</label>
+          <label><input type="radio" name="P20" value="1" /> Casi nunca</label>
+          <label><input type="radio" name="P20" value="2" /> Regular</label>
+          <label><input type="radio" name="P20" value="3" /> Casi siempre</label>
+          <label><input type="radio" name="P20" value="4" /> Siempre</label>
+        </div>
+      </fieldset>
+    </form>
+
+    <!-- ====================== Acciones ====================== -->
+    <section class="acciones">
+      <button id="btnCalcular" class="btn btn-primary">Generar diagnóstico</button>
+      <button id="btnExportPdf" class="btn">Exportar PDF</button>
+      <button id="btnExportJson" class="btn">Exportar JSON</button>
+      <button id="btnLimpiar" class="btn btn-ghost">Limpiar</button>
+    </section>
+
+    <!-- ====================== Resultados ====================== -->
+    <section id="resultados" class="card result">
+      <div id="emptyMsg">
+        <p>Aquí aparecerá el diagnóstico una vez completes el formulario.</p>
+      </div>
+
+      <div id="resResumen" hidden>
+        <h2>Resultado del Diagnóstico</h2>
+        <p>Puntaje Global: <span id="puntajeGlobal">0</span> / 90</p>
+        <p>Clasificación: <span id="clasificacion">–</span></p>
+        <p>Dominio más débil: <span id="dominioDebil">–</span></p>
+
+        <h3>🔎 Focos Rojos Detectados</h3>
+        <ul id="focosRojos"></ul>
+
+        <div id="bloqueExplicacion" class="explicacion"></div>
+
+        <h3>💪 Recomendaciones — Físico</h3>
+        <ul id="recoFisico"></ul>
+
+        <h3>🧠 Recomendaciones — Emocional</h3>
+        <ul id="recoEmocional"></ul>
+
+        <h3>🐾 Recomendaciones — Social</h3>
+        <ul id="recoSocial"></ul>
+
+        <div id="seguimiento" class="seguimiento" hidden></div>
+        <p id="mensajeTutor" class="mensajeTutor"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== Librerías ===================== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <!-- Tu script principal -->
+  <script src="app.js" defer></script>
+</body>
+</html>
